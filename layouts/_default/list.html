@@ -1,3 +1,4 @@
+{{/* BEGIN CUSTOM: matiasilva - use relative URLs */}}
 {{ define "main" }}
 <content>
   {{ if .Data.Singular }}
@@ -16,7 +17,7 @@
           </time>
         </i>
       </span>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </li>
     {{ else }}
     <li>
@@ -28,10 +29,11 @@
   <small>
     <div>
       {{ range .Site.Taxonomies.tags }}
-      <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+      <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>&nbsp;
       {{ end }}
     </div>
   </small>
   {{ end }}
 </content>
 {{ end }}
+{{/* END CUSTOM */}}

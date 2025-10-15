@@ -1,7 +1,8 @@
+{{/* BEGIN CUSTOM: matiasilva - use relative URLs */}}
 <div style="font-size:0.8em;display:flex;gap:16px;justify-content:center;">
   <p>
     {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.Permalink }}">
+    <a href="{{ .PrevInSection.RelPermalink }}">
       << Previous Post</a>
         {{ else }}
         <strike>
@@ -11,9 +12,10 @@
   <p>|</p>
   <p>
     {{ if .NextInSection }}
-    <a href="{{ .NextInSection.Permalink }}">Next Post >></a>
+    <a href="{{ .NextInSection.RelPermalink }}">Next Post >></a>
     {{ else }}
     <strike>Next Post >></strike>
     {{ end }}
   </p>
 </div>
+{{/* END CUSTOM */}}

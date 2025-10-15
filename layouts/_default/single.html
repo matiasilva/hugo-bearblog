@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{/* BEGIN CUSTOM: matiasilva - show title for non-blog pages */}}
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
 <p>
@@ -8,7 +9,10 @@
     </time>
   </i>
 </p>
-{{ end }}{{ end }}
+{{ end }}{{ else }}
+<h1>{{ .Title }}</h1>
+{{ end }}
+{{/* END CUSTOM */}}
 <content>
   {{ .Content }}
 </content>
@@ -17,9 +21,11 @@
 {{- partial "post_navigator.html" . -}}
 {{ end }}{{ end }}
 
+{{/* BEGIN CUSTOM: matiasilva - use relative URLs for tags */}}
 <p>
   {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
   {{ end }}
 </p>
+{{/* END CUSTOM */}}
 {{ end }}

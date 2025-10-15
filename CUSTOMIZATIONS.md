@@ -21,21 +21,20 @@ All custom code is wrapped in comments with `BEGIN CUSTOM: matiasilva` and `END 
 - **`layouts/partials/header.html`**: Custom horizontal header with site title link
 - **`layouts/partials/footer.html`**: Multi-column footer with contact info
 
-### Blog Layouts
+### Layouts
+- **`layouts/_default/single.html`**: Show title for non-blog pages (e.g., Projects page)
 - **`layouts/blog/list.html`**: Blog list with relative URLs (`.RelPermalink`)
 - **`layouts/blog/single.html`**: Blog post with "Originally written on [date]" footer
 - **`layouts/index.html`**: Homepage with featured posts section
 
-### Projects Layouts
-- **`layouts/projects/section.html`**: Simple section layout for projects listing
-- **`layouts/projects/single.html`**: Project page with optional metadata links (blog_post, github, demo)
+## Content Structure
 
-## Custom Features
+All content (blog posts and projects) lives in `content/blog/` with unified date-based URLs: `/:year/:month/:day/:slug/`
 
-### Project Front Matter
-Projects support these optional fields:
+### Optional Front Matter for Projects
+Blog posts can include these optional fields for project metadata:
 ```toml
-blog_post = "/blog/post-slug/"
+blog_post = "/2021/03/16/related-post/"
 github = "https://github.com/..."
 demo = "https://example.com"
 ```
