@@ -1,0 +1,24 @@
+{{/* BEGIN CUSTOM: matiasilva - blog single with post meta date footer */}}
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<content>
+  {{ .Content }}
+</content>
+
+<p class="post-meta">
+  Originally written on {{ .Date.Format "January 2, 2006" }}
+</p>
+
+<p>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+
+{{ if (.Param "enablePostNavigator")}}
+{{- partial "post_navigator.html" . -}}
+{{ end }}
+
+{{ end }}
+{{/* END CUSTOM */}}

@@ -1,4 +1,6 @@
-<a href="{{ "" | relURL }}" class="title">
-  <h2>{{ .Site.Title }}</h2>
+{{/* BEGIN CUSTOM: matiasilva - horizontal header with site title link */}}
+<a href="{{ "" | relURL }}" class="site-title-link">
+  <h2 class="site-title">{{ .Site.Title }}</h2>
 </a>
 <nav>{{- partial "nav.html" . -}}</nav>
+{{/* END CUSTOM */}}

@@ -1,1 +1,22 @@
-{{ if not (.Param "hideMadeWithLine") }}Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>{{ end }}
+{{/* BEGIN CUSTOM: matiasilva - custom footer with columns */}}
+<div class="footer-content">
+  <div class="footer-column">
+    <p>
+      {{ .Site.Title }}<br>
+      {{ .Site.Copyright }}
+    </p>
+  </div>
+  <div class="footer-column">
+    <p>
+      <a href="mailto:hello@matiasilva.com">hello@matiasilva.com</a><br>
+      <a href="https://github.com/matiasilva">github.com/matiasilva</a>
+    </p>
+  </div>
+  <div class="footer-column">
+    <p>
+      <a href="https://www.linkedin.com/in/matiasilva">linkedin</a><br>
+      <a href="/blog/">blog</a>
+    </p>
+  </div>
+</div>
+{{/* END CUSTOM */}}

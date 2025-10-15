@@ -1,3 +1,17 @@
+{{/* BEGIN CUSTOM: matiasilva - homepage with featured posts */}}
 {{ define "main" }}
 {{ .Content }}
+
+<h2>Featured Posts</h2>
+<ul class="blog-posts">
+  {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+  <li>
+    <span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006 Jan 02" }}</time>
+    </span>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
 {{ end }}
+{{/* END CUSTOM */}}

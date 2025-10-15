@@ -10,18 +10,24 @@
     --link-color: #3273dc;
     --visited-color: #8b6fcb;
     --blockquote-color: #222;
+    /* BEGIN CUSTOM: matiasilva custom accent colors */
+    --accent-name: #1a3a52;
+    --accent-nav: #8b8680;
+    /* END CUSTOM */
   }
 
+  /* BEGIN CUSTOM: matiasilva - force light theme permanently */
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-color: #01242e;
-      --heading-color: #eee;
-      --text-color: #ddd;
-      --link-color: #8cc2dd;
+      --background-color: #fff;
+      --heading-color: #222;
+      --text-color: #444;
+      --link-color: #3273dc;
       --visited-color: #8b6fcb;
-      --blockquote-color: #ccc;
+      --blockquote-color: #222;
     }
   }
+  /* END CUSTOM */
 
   body {
     font-family: var(--font-secondary);
@@ -50,7 +56,7 @@
   a {
     color: var(--link-color);
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: underline; /* CUSTOM: matiasilva - underline all links */
   }
 
   a:hover {
@@ -107,10 +113,69 @@
     font-style: italic;
   }
 
-  footer {
-    padding: 25px 0;
-    text-align: center;
+  /* BEGIN CUSTOM: matiasilva - custom header, nav, and footer styling */
+  main h2 {
+    font-size: 1.3em;
   }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+  }
+
+  header .site-title-link {
+    text-decoration: none;
+  }
+
+  header .site-title {
+    color: var(--accent-name);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  header .site-title-link:hover .site-title {
+    opacity: 0.7;
+  }
+
+  nav a {
+    color: var(--accent-nav);
+    font-weight: 400;
+    text-transform: lowercase;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  nav a:hover {
+    opacity: 0.7;
+  }
+
+  footer {
+    font-size: 0.9em;
+    color: var(--accent-nav);
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    padding-top: 1em;
+    overflow: hidden;
+  }
+
+  .footer-column {
+    color: var(--accent-nav);
+    float: left;
+    margin-right: 3em;
+  }
+
+  .footer-column a {
+    font-size: 80%;
+    color: #8085C1;
+  }
+
+  .footer-column a:hover {
+    opacity: 0.7;
+  }
+  /* END CUSTOM */
 
   .title:hover {
     text-decoration: none;
@@ -132,9 +197,10 @@
     overflow-x: auto;
   }
 
-  /* blog post list */
+  /* BEGIN CUSTOM: matiasilva - blog post list styling */
   ul.blog-posts {
     list-style-type: none;
+    line-height: 1.75em;
     padding: unset;
   }
 
@@ -143,11 +209,42 @@
   }
 
   ul.blog-posts li span {
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+    font-weight: 400;
+    margin-right: 1em;
     flex: 0 0 130px;
   }
 
   ul.blog-posts li a:visited {
     color: var(--visited-color);
   }
+  /* END CUSTOM */
+
+  /* BEGIN CUSTOM: matiasilva - project links */
+  .project-links {
+    margin: 1.5em 0;
+    padding: 1em;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+  }
+
+  .project-links a {
+    margin-right: 1.5em;
+    font-weight: 500;
+  }
+  /* END CUSTOM */
+
+  /* BEGIN CUSTOM: matiasilva - blog post meta footer */
+  .post-meta {
+    color: var(--accent-nav);
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px dashed #ddd;
+  }
+  /* END CUSTOM */
 
 </style>
