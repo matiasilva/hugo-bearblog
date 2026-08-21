@@ -10,13 +10,7 @@
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}'>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </span>
+      <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "Jan 2, 2006" .Site.Params.dateFormat) }}</time>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </li>
     {{ else }}
